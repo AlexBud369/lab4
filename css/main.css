@@ -790,7 +790,7 @@
   line-height: 3.125rem; 
   text-transform: capitalize;
   margin-left: 0;
-  padding-top: 7.125rem;
+  padding-top: 0.125rem;
 }
 .first-word,
 .last-words {
@@ -861,7 +861,7 @@
 
 .top_food_section {
   max-width: 73.0625rem;
-  height: auto;
+  height: 957px;
   margin-left: 9.41%;/*135.5px*/
   margin-right: 9.41%;
   margin-top: 8.0625rem;
@@ -974,6 +974,94 @@
   width: 1.5rem;
   height: 1.5rem;
   flex-shrink: 0;
+}
+
+
+.app-download-section {
+  display: flex;
+  justify-content: space-between; 
+  gap: 0.375rem;
+  max-width: 73.125rem;
+  /*height: 480px;*/
+  margin-left: 9.375%;
+  margin-right: 9.375%;
+  margin-top: 10.1875rem;
+}
+
+
+.app-text-content {
+  max-width: 32.75rem;
+  /*height: 15.1875rem;*/
+  margin-top: 7.25rem;
+}
+
+.app-title {
+  color: var(--Primary, #363853);
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 3.125rem; /* 138.889% */
+  text-transform: capitalize;
+  margin-top: 0.1875rem;
+}
+
+.app-title span{
+  color: var(--Secondary, #FF7A50);
+}
+
+.app-description {
+  /*height: 5.875rem;*/
+  color: #363853;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem; /* 150% */
+  margin-top: 1.875rem;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 1.6875rem;
+  margin-top: 1.875rem;
+  
+}
+
+.apple_button{
+  width: 7.5rem;
+  height: 2.5rem;
+  border-radius: 7px;
+  border: none;
+  background-position: center; 
+  background-image: url('../images/Apple.png');
+  
+}
+
+.google_button{
+  width: 8.4375rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  background-position: center; 
+  background-image: url('../images/Google\ Play.png');
+}
+
+
+.app-image {
+  max-width: 39.625rem;
+  max-height: 30rem;
+  margin-left: 0;
+  margin-top: 0.1875rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 
@@ -1093,6 +1181,19 @@
     .top_food_section {
       margin: 0 auto;
     }
+
+    /*download_our_app*/
+
+    .app-download-section{
+      margin-top: 100px;
+    }
+
+    .app-image {
+      max-width: 500px;
+      max-height: 378.55px;
+      /*margin-left: 0;
+      margin-top: 0.1875rem;*/
+    }
     
   }
 
@@ -1175,6 +1276,7 @@
     }
 
     .top_food_section {
+      height: 1440px;
       margin-left: 9.41%;/*135.5px*/
       margin-right: 9.41%;
     }
@@ -1182,6 +1284,30 @@
     .top_food_grid-item{
       margin: 0 auto;
     }
+
+    /*download_our_app*/
+    .app-download-section{
+      
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .app-text-content,
+    .app-image
+    {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .app-description,
+    .app-buttons {
+      margin-top: 1.5625rem;
+    }
+
+    .app-buttons {
+      justify-content: center;
+    }
+    
+
   }
   
   @media (max-width: 992px) {
@@ -1197,6 +1323,12 @@
     }
   }
 
+
+  @media(max-width: 795px){
+    .top_food_section {
+      height: 175.625rem;
+    }
+  }
 
 @media (max-width: 768px) {
   
@@ -1317,9 +1449,6 @@
     max-width: 556px;
     max-height: 642px;
     }
-   
-
-
 }
 
 @media (max-width: 576px) {
@@ -1486,6 +1615,34 @@
       grid-template-columns: repeat(auto-fit, minmax(18.5625rem, 1fr));
       height: auto;
     }
+
+    /*download app section*/
+    .app-download-section{
+      margin-top: 4.375rem;
+    }
+    .app-title{
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: normal;
+    }
+    .app-description{
+      font-size: 1rem;
+    }
+
+    .app-image{
+      max-width: 18.75rem;
+      max-height: 14.1875rem;
+      
+    }
+
+    .app-text-content,
+    .app-image
+    {
+      
+      margin: auto 0;
+    }
+
+
 }
 
 
