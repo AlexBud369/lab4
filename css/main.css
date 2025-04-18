@@ -1212,6 +1212,100 @@
   opacity: 0.8;
 }
 
+.subscribe-section {
+  --secondary: #FF7A50;
+  --primary: #363853;
+  --white: #FFF;
+  background: var(--secondary);
+  color: var(--white);
+  border-radius: 20px;
+  margin: 7.5rem auto 0;
+  max-width: 73.125rem;
+  width: calc(100% - 18.75%); 
+  box-sizing: border-box;
+}
+
+.subscribe-wrapper {
+  max-width: 73.125rem;
+  min-height: 19.5rem;
+  margin: 0 auto;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscribe-form h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 3.625rem 0 0.6875rem;
+}
+
+.subscribe-text {
+  font-size: 1rem;
+  line-height: 1.875rem;
+  opacity: 0.8;
+  margin-bottom: 1.875rem;
+  max-width: 39.1875rem;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  max-width: 52.4375rem;
+  margin: 0 auto;
+}
+
+.email-input {
+  width: 100%;
+  height: 5rem;
+  padding: 0 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.125rem;
+  color: var(--primary);
+  box-shadow: 10px 24px 54px rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+}
+
+.email-input::placeholder {
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.subscribe-button {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.9375rem;
+  height: 3.625rem;
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  border-radius: 70px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.subscribe-button:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+.button-icon {
+  width: 0.975rem;
+  height: 0.975rem;
+  margin-right: 0.875rem;
+}
+
+
 
   @media (max-width: 1439px) {
   
@@ -1358,7 +1452,7 @@
       font-size: 18px;
       text-align: justify;
     }
-    
+
   }
 
   @media (max-width: 1200px) {
@@ -1482,6 +1576,10 @@
       flex-direction: column;
     }
 
+    .input-group{
+      max-width: 37.5rem;
+    }
+
   }
   
   @media (max-width: 992px) {
@@ -1490,11 +1588,22 @@
     .complex-block:nth-child(4) {
       display: none;
     }
+
   /*top_food_section*/
     .top_food_section {
       margin-left: 2%;
       margin-right: 2%;
     }
+
+    .subscribe-text,
+    .input-group{
+      max-width: 31.25rem;
+    }
+
+    .subscribe-form h2{
+      font-size: 2rem;
+    }
+   
   }
 
 
@@ -1502,6 +1611,10 @@
     .top_food_section {
       height: 175.625rem;
     }
+
+   .subscribe-section{
+    width: 90%;
+   }
   }
 
 @media (max-width: 768px) {
@@ -1637,6 +1750,27 @@
       margin-top: 16.75rem;
     }
 
+    .testimonial-content,
+    .client_block1{
+      height: auto;
+    }
+
+    /*subscribe form*/
+    .subscribe-section{
+      margin: 4.5rem auto 0;
+    }
+
+    .subscribe-form h2{
+      text-transform: capitalize;
+    }
+
+    .subscribe-text{
+      font-size: 1rem;
+      text-align: justify;
+    }
+    .email-input{
+      letter-spacing: 0.4px
+    }
 
 }
 
@@ -1682,6 +1816,19 @@
 
     .quote-open,
     .quote-close{
+      display: none;
+    }
+
+    .button-icon{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .subscribe-button {
+      width: 3.625rem;
+      height: 3.625rem;
+    }
+
+    .subscribe-button span{
       display: none;
     }
 
@@ -1883,8 +2030,45 @@
     .testimonial-section{
       margin-left: 2%;
       margin-right: 2%;
+      height: auto;
+    }
+   
+/*subscribe section*/
+
+    
+    .subscribe-form h2{
+      font-size: 24px;
+      text-align: center;
+      margin: 0 auto;
     }
 
+    .subscribe-form{
+      height: auto;
+      padding: 15% 0;
+    }
+
+    .subscribe-text{
+      max-width: 400px;
+      margin: 5% 4%;
+    }
+
+    .email-input::placeholder {
+      font-size: 1rem;
+    }
+
+    .input-group {
+      margin: 0 auto;
+      width: clamp(270px, 80%, 500px); 
+    }
+
+    .email-input{
+      height: 3rem;
+    }
+
+    .subscribe-button{
+      width: 2.625rem;
+      height: 2.625rem;
+    }
 }
 
 
@@ -1911,5 +2095,8 @@
       max-width: 20rem;
     }
 
+    .email-input{
+      letter-spacing: 0.3px;
+    }
 }
   
