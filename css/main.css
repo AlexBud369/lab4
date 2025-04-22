@@ -1597,6 +1597,17 @@ input::placeholder {
   left: 0;
 }
 
+@keyframes subscribeGradient {
+  0% { background: linear-gradient(45deg, #FF7A50, #D45A30); transform: translateY(0); }
+  33% { background: linear-gradient(45deg, #D45A30, #A83C20); transform: translateY(-2px); }
+  66% { background: linear-gradient(45deg, #A83C20, #7A2C15); transform: translateY(0); }
+  100% { background: linear-gradient(45deg, #7A2C15, #FF7A50); transform: translateY(2px); }
+}
+.subscribe-section {
+  animation: subscribeGradient 15s ease infinite;
+}
+
+
   @media (max-width: 1439px) {
   
     /*header adaptibility*/
