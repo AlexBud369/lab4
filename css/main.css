@@ -1638,6 +1638,14 @@ input::placeholder {
 }
 
 
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+.img_scooter_guy {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; } to { opacity: 1; }
 }
