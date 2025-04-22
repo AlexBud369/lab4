@@ -1597,6 +1597,13 @@ input::placeholder {
   left: 0;
 }
 
+@keyframes fadeOut {
+  from { opacity: 1; } to { opacity: 0; }
+}
+.cart__badge {
+  animation: fadeOut 3s ease infinite alternate;
+}
+
 @keyframes subscribeGradient {
   0% { background: linear-gradient(45deg, #FF7A50, #D45A30); transform: translateY(0); }
   33% { background: linear-gradient(45deg, #D45A30, #A83C20); transform: translateY(-2px); }
