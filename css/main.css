@@ -1597,6 +1597,16 @@ input::placeholder {
   left: 0;
 }
 
+
+
+
+@keyframes blink {
+  0%, 100% { background-color: #FF7A50; } 50% { background-color: #47C2FF; }
+}
+.div_button {
+  animation: blink 2s ease infinite;
+}
+
 @keyframes borderGlow {
   0%, 100% { border-color: #FF6838; opacity: 1; } 
   50% { border-color: #47C2FF; opacity: 0.5; }
