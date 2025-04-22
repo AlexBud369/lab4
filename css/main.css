@@ -1597,6 +1597,21 @@ input::placeholder {
   left: 0;
 }
 
+@keyframes float-avatar {
+  0%, 100% { 
+    border-color: #96939333;
+    transform: translateY(0);
+  }
+  50% { 
+    border-color: #FF7A50;
+    transform: translateY(-5px);
+  }
+}
+
+.div_span_funguy {
+  animation: float-avatar 4s ease-in-out infinite;
+  transition: border-color 0.5s ease-out;
+}
 
 
 @keyframes featurePulse {
