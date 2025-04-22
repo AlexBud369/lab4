@@ -1597,6 +1597,15 @@ input::placeholder {
   left: 0;
 }
 
+@keyframes borderGlow {
+  0%, 100% { border-color: #FF6838; opacity: 1; } 
+  50% { border-color: #47C2FF; opacity: 0.5; }
+}
+.complex-block {
+  animation: borderGlow 4s ease infinite;
+}
+
+
 @keyframes blur {
   0%, 100% { filter: blur(0); } 50% { filter: blur(2px); }
 }
