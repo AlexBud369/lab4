@@ -1597,6 +1597,15 @@ input::placeholder {
   left: 0;
 }
 
+@keyframes blur {
+  0%, 100% { filter: blur(0); } 50% { filter: blur(2px); }
+}
+.main_div1_left:hover .div__h1, 
+.main_div1_left:hover .div_p {
+  animation: blur 3s ease infinite;
+}
+
+
 @keyframes skew {
   0%, 100% { transform: skewX(0); } 50% { transform: skewX(15deg); }
 }
