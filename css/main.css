@@ -81,22 +81,6 @@
     box-sizing: border-box;
   }
 
-
-  /*body {
-    width: 100%;
-    min-height: 100vh; /* Минимальная высота - на весь экран 
-    margin: 0 auto;
-    max-width: 1440px; /* Максимальная ширина для больших экранов 
-    
-    /* Для контента, который должен растягиваться 
-    display: flex;
-    flex-direction: column;
-  }*/
-
-  /*body{
-    background: linear-gradient(120deg, rgba(239, 239, 239, 0.00) -2.01%, rgba(237, 237, 237, 1.0) 103.74%);
-    backdrop-filter: blur(388.5px);
-  }*/
   body, html {
     height: 100%;
     min-height: 100vh;
@@ -185,9 +169,20 @@
     padding: 0.5rem 0; 
   }
   
-  .nav__link.active {
-    color: #FF6838 !important;
-  }
+/*pseudo-classes for nav-link*/
+.nav__link:hover {
+  color: #FF7A50;
+  transform: translateY(-2px);
+}
+
+.nav__link:active {
+  transform: scale(0.98);
+}
+
+.nav__link:focus-visible {
+  outline: 2px dashed #FF7A50;
+  outline-offset: 3px;
+}
   
   .header__actions {
     display: flex;
