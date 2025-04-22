@@ -909,7 +909,7 @@
   flex-direction: column;
 }
 
-
+/*pseudo class for grid-item*/
 .top_food_grid-item:nth-child(2n) {
   background-color: #d9fbe4; 
 }
@@ -1540,6 +1540,62 @@
   width: 41px;
 }
 
+
+
+h2::before {
+  content: "» ";
+  color: #FF6838;
+}
+
+
+
+.div_p::first-letter {
+  font-size: 1.5em;
+  color: #FF6838;
+}
+
+
+::selection {
+  background: #FF7A50;
+  color: white;
+}
+
+
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.efood-footer::after {
+  content: "❤️ Made with love";
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  color: #FF6838;
+  font-size: 0.8rem;
+}
+
+
+.nav__link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6838, #FF7A50);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+  left: 0;
+}
 
   @media (max-width: 1439px) {
   
