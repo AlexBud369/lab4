@@ -1598,6 +1598,25 @@ input::placeholder {
 }
 
 
+
+@keyframes featurePulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255, 122, 80, 0)); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 8px rgba(255, 122, 80, 0.4)); }
+}
+
+.feature-icon {
+  animation: featurePulse 3s ease-in-out infinite;
+}
+
+.feature:nth-child(2) .feature-icon {
+  animation-delay: 0.5s;
+}
+
+.feature:nth-child(3) .feature-icon {
+  animation-delay: 1s;
+}
+
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
