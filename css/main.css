@@ -1597,6 +1597,13 @@ input::placeholder {
   left: 0;
 }
 
+@keyframes skew {
+  0%, 100% { transform: skewX(0); } 50% { transform: skewX(15deg); }
+}
+.nav__link:hover {
+  animation: skew 1s ease infinite;
+}
+
 @keyframes rotate {
   from { transform: rotate(0deg); } to { transform: rotate(360deg); }
 }
