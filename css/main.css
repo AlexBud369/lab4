@@ -155,6 +155,7 @@
     position: relative;
   }
   
+
   .header__nav .nav__list:nth-child(1) .nav__item {
     color: #FF6838;
   }
@@ -243,6 +244,11 @@
   .header__right-button:hover {
     opacity: 0.9;
   }
+
+  .header__right-button:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
   
   .signup_span {
     font-size: 1.125rem; 
