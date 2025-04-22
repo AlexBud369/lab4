@@ -155,7 +155,6 @@
     position: relative;
   }
   
-
   .header__nav .nav__list:nth-child(1) .nav__item {
     color: #FF6838;
   }
@@ -244,7 +243,7 @@
   .header__right-button:hover {
     opacity: 0.9;
   }
-
+/*pseudo class for right-button*/
   .header__right-button:disabled {
     background-color: #ccc; 
     cursor: not-allowed; 
@@ -911,6 +910,13 @@
 }
 
 
+.top_food_grid-item:nth-child(2n) {
+  background-color: #d9fbe4; 
+}
+.top_food_grid-item:nth-child(3n) {
+  background-color: #f7c6f8; 
+}
+
 .top_food_img {
   width: 22.625rem;
   height: 18.6875rem;
@@ -1225,6 +1231,7 @@
   width: calc(100% - 18.75%); 
   box-sizing: border-box;
 }
+
 
 .subscribe-wrapper {
   max-width: 73.125rem;
