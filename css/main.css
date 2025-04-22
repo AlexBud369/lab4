@@ -1540,7 +1540,7 @@
   width: 41px;
 }
 
-
+/*pseudo-elements*/
 
 h2::before {
   content: "» ";
@@ -1597,6 +1597,16 @@ input::placeholder {
   left: 0;
 }
 
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.apple_button:hover, 
+.google_button:hover {
+  animation: bounce 0.5s ease infinite alternate;
+}
 
 @keyframes gentleAppear {
   0% { transform: translateX(30%) scale(0.9); opacity: 0; filter: blur(2px); }
