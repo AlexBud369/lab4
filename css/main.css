@@ -106,160 +106,7 @@
     background-attachment: fixed;
   }
 
-  .header {
-    max-width: 73rem;
-    max-height: 3.125rem;
-    margin-top: 3.375rem;
-    margin-left: 9.44%;
-    margin-right: 9.44%;
-  }
-  
-  .header__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    max-height: 3.125rem;
-    
-  }
-  
-  .header__logo {
-    text-decoration: none;
-  }
-  
-  .header__logo h2 {
-    display: flex;
-    max-width: 6.625rem; /* 106px → rem */
-    color: #363853;
-    font-size: 2.0625rem; /* 33px → rem  clamp(1.5rem, 5vw, 2.0625rem) */
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.103125rem; /* 1.65px → rem */
-  }
-  
-  .header__logo span::first-letter{
-    color: #FF6838;
-  }
-  
-  .burger-menu {
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;  
-  }
-
-
-  .header__nav{
-    display: flex;
-    /* 17.4375rem → % */
-  }
-  
-  .nav__list{
-    max-width: 27.9375rem; /* 447px → rem */
-    display: flex;
-    justify-content: space-around;
-    gap: 3.75rem;
-    list-style: none;
-    
-  }
-  
-  .nav__item {
-    font-style: normal;
-   /* font-size: clamp(1rem, 3vw, 1.125rem); */
-    font-size: 1.125rem;/* Адаптивный размер */
-    line-height: normal;
-    position: relative;
-  }
-  
-  .header__nav .nav__list:nth-child(1) .nav__item {
-    color: #FF6838;
-  }
-  
-  .nav__link {
-    text-decoration: none;
-    color: #363853;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0.5rem 0; 
-  }
-  
-  .nav__link.active {
-    color: #FF6838 !important;
-  }
-  
-  .header__actions {
-    display: flex;
-    align-items: center;
-    width: auto; 
-    margin-left: 3.6875rem; 
-  }
-  
-  .action__search{
-    background: none;
-    display: flex;
-    width: 1.3125rem;
-    height: 1.375rem;
-    border: none;
-    flex-shrink: 0;
-  }
-  
-  
-  .action__cart{
-    background: none;
-    border: 2px;
-    cursor: pointer;
-    width: 1.25rem;
-    height: 1.25rem;
-    display: flex;
-    margin-left: 3.75rem;
-  }
-  
-  .cart__badge {
-    position: absolute;
-    width: 0.875rem;
-    height: 0.875rem;
-    background: #FF6838;
-    color: white;
-    border-radius: 50%;
-    font-size: 0.625rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.12);
-    transform: translate(14px, -4px); 
-  }
-  
-  .header__right-button {
-    background: #FF7A50;
-    min-width: 7.5rem; /*clamp(6rem, 15vw, 7.5rem)*/
-    min-height: 3.125rem; /*clamp(2.5rem, 6vw, 3.125rem)*/
-    box-shadow: 0 1.375rem 2.5rem 0 rgba(255, 104, 56, 0.19);
-    border-radius: 0.3125rem;
-    border: none;
-    transition: opacity 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3.5625rem;
-  }
-  
-  .header__right-button:hover {
-    opacity: 0.9;
-  }
-  
-  .signup_span {
-    font-size: 1.125rem; 
-    color: #FFFFFF;
-    cursor: pointer;
-    font-style: normal;
-    line-height: 1.3125rem;
-    display: flex;
-    margin-left: -0.0625rem;
-    margin-top: 0.1875rem;
-  }
-
+ 
 
 .mobile-menu-btn {
   display: none;
@@ -1535,27 +1382,6 @@
 
   @media (max-width: 1439px) {
   
-    /*header adaptibility*/
-    .header__right-button {
-      margin-left: 2.5rem;
-    }
-
-    .header__actions{
-      margin-left: 2rem;
-    }
-
-    .nav__list {
-      gap: 1.875rem;
-    }
-    
-    .burger-menu{
-      margin-left: 15rem;  
-    }
-
-    .action__cart{
-      margin-left: 2.5rem;
-    }
-
     /*first_section_adaptive*/
     .main_section1 {
         margin: 0 auto;
@@ -1910,29 +1736,6 @@
 
 @media (max-width: 768px) {
   
-/*header adaptibility*/
-    .header__container{
-      width: auto;
-      display: flex;
-      justify-content: space-between;
-    }
-    .burger-menu{
-      max-width: 0;
-      margin-left: 0;
-    }
-
-    .header__right-button {
-      min-width: 6rem;
-    }
-
-    .mobile-menu-btn {
-      display: block;
-      margin-left: 1rem;
-    }
-    .menu_right{
-      margin-left: 1rem;
-    }
-
 /*first_main_section*/
 
     .img_scooter_guy {
@@ -2134,23 +1937,6 @@
 
 @media (max-width: 576px) {
   
- /*header adaptibility*/
-    .header__logo h2 {
-      font-size: 1.5rem; 
-    }
-
-    .header__right-button {
-      display: none;
-    }
-
-    .signup_span {
-      font-size: 0.875rem; 
-    }
-
-    .mobile-menu-btn {
-      margin-left: 0.5rem;
-    }
-
 /*first_section_adaptive*/
 
     .main_section1{
