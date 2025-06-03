@@ -164,4 +164,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentProducts = [...products];
 
+
+
+    function renderProducts(productList) {
+        catalogItems.innerHTML = '';
+        noResults.style.display = productList.length === 0 ? 'block' : 'none';
+        productCount.textContent = `${productList.length} ${productList.length === 1 ? 'item' : 'items'}`;
+
+        productList.forEach(product => {
+            const stars = Array(Math.floor(product.rating)).fill('<img src="images/Icons=Star.png" alt="Star" class="icon">').join('');
+            const halfStar = product.rating % 1 >= 0.5 ? '<img src="images/Icons=HalfStar.png" alt="Half Star" class="icon">' : '';
+            
+            const item = document.createElement('div');
+            item.className = 'catalog-item';
+            item.innerHTML = `
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <div class="product-details">
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <p class="product-weight">${product.weight}</p>
+                    </div>
+                    <div class="product-meta">
+                        <p class="product-category">${product.category}</p>
+                        <div class="icons">${stars}${halfStar}</div>
+                    </div>
+                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                </div>
+            `;
+            catalogItems.appendChild(item);
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.getAttribute('data-id'));
+                const product = currentProducts.find(p => p.id === productId);
+                if (product) {
+                    alert(`Added to cart: ${product.name}`);
+                }
+            });
+        });
+    }
+
 });
