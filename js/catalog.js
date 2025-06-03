@@ -209,4 +209,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+     function applyFiltersAndSort() {
+        let filtered = [...products];
+
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+            filtered = filtered.filter(product => 
+                product.name.toLowerCase().includes(query) || 
+                product.description.toLowerCase().includes(query)
+            );
+        }
+
+        const activeCategory = document.querySelector('.category-btn.active')?.dataset.category;
+        if (activeCategory && activeCategory !== 'all') {
+            filtered = filtered.filter(product => product.category === activeCategory);
+        }
+
+        const sortValue = sortSelect.value;
+        switch (sortValue) {
+            case 'price-asc':
+                filtered.sort((a, b) => a.price - b.price);
+                break;
+            case 'price-desc':
+                filtered.sort((a, b) => b.price - a.price);
+                break;
+            case 'name-asc':
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+                break;
+            case 'name-desc':
+                filtered.sort((a, b) => b.name.localeCompare(a.name));
+                break;
+            case 'rating-desc':
+                filtered.sort((a, b) => b.rating - a.rating);
+                break;
+            case 'weight-asc':
+                filtered.sort((a, b) => parseFloat(a.weight) - parseFloat(b.weight));
+                break;
+            case 'weight-desc':
+                filtered.sort((a, b) => parseFloat(b.weight) - parseFloat(a.weight));
+                break;
+            default:
+                break;
+        }
+
+        currentProducts = filtered;
+        renderProducts(filtered);
+    }
+
+
 });
