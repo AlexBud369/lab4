@@ -257,5 +257,15 @@ document.addEventListener('DOMContentLoaded', function() {
         renderProducts(filtered);
     }
 
+     searchInput.addEventListener('input', debounce(applyFiltersAndSort, 300));
+    sortSelect.addEventListener('change', applyFiltersAndSort);
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            applyFiltersAndSort();
+        });
+    });
 
 });
