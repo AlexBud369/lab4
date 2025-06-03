@@ -44,8 +44,45 @@
             </div>
         </div>
     </header>
-    <main>
-
+    <main class="catalog-main">
+        <section class="catalog-section">
+            <h2 class="catalog-title">Catalog <span class="category_span">Products</span></h2>
+            <div class="catalog-controls">
+                <input type="text" id="search-input" class="search-input" placeholder="Search by name or description">
+                <select id="sort-select" class="sort-select">
+                    <option value="">Sort By</option>
+                    <option value="price-asc">Price (Ascending)</option>
+                    <option value="price-desc">Price (Descending)</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="rating-desc">Rating (High to Low)</option>
+                </select>
+                <div class="category-filter">
+                    <h3>Categories</h3>
+                    <button class="category-btn" data-category="all">All</button>
+                    <button class="category-btn" data-category="Burgers">Burgers</button>
+                    <button class="category-btn" data-category="Pizza">Pizza</button>
+                    <button class="category-btn" data-category="Sandwiches">Sandwiches</button>
+                    <button class="category-btn" data-category="Asian Food">Asian Food</button>
+                </div>
+            </div>
+            <div class="array-controls">
+                <button class="array-btn" data-action="all">All Products</button>
+                <button class="array-btn" data-action="filter-burgers">Only Burgers</button>
+                <button class="array-btn" data-action="filter-pizza">Only Pizza</button>
+                <button class="array-btn" data-action="price-above-10">Price > $10</button>
+                <button class="array-btn" data-action="rating-above-4">Rating > 4</button>
+                <button class="array-btn" data-action="sort-price-asc">Sort by Price (↑)</button>
+                <button class="array-btn" data-action="sort-price-desc">Sort by Price (↓)</button>
+                <button class="array-btn" data-action="top-5-rating">Top 5 by Rating</button>
+                <button class="array-btn" data-action="average-price">Average Price</button>
+                <button class="array-btn" data-action="map-discount">Apply 10% Discount</button>
+                <button class="array-btn" data-action="unique-categories">Unique Categories</button>
+            </div>
+            <div id="catalog-items" class="catalog-items"></div>
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>No products found</p>
+            </div>
+        </section>
     </main>
     <footer class="efood-footer">
         <div class="footer-container">
