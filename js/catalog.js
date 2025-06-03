@@ -388,5 +388,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+     clearFiltersButton.addEventListener('click', function() {
+        searchInput.value = '';
+        sortSelect.value = '';
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.category-btn[data-category="all"]').classList.add('active');
+        currentProducts = [...products];
+        renderProducts(currentProducts);
+    });
+
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            const context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                func.apply(context, args);
+            }, wait);
+        };
+    }
+
+    renderProducts(products);
 
 });
