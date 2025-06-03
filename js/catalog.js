@@ -151,6 +151,17 @@ document.addEventListener('DOMContentLoaded', function() {
               weight: "160g" }
     ];
 
+    const catalogItems = document.getElementById('catalog-items');
+    const noResults = document.getElementById('no-results');
+    const productCount = document.getElementById('product-count');
+    const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const arrayButtons = document.querySelectorAll('.array-btn');
+    const clearFiltersButton = document.querySelector('.clear-filters');
+    const arrayButtonsContainer = document.querySelector('.array-buttons-container');
+
+
     let currentProducts = [...products];
 
 });
