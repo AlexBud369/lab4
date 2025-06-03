@@ -336,3 +336,115 @@
     grid-column: 1 / -1;
     padding: 0 1rem;
 }
+
+
+@media (max-width: 1200px) {
+    .catalog-main {
+        padding: 0 1.5rem;
+    }
+   .mobile-menu-btn {
+        display: block;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .catalog-content {
+        flex-direction: column;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .catalog-sidebar {
+        width: 100%;
+        min-width: auto;
+        max-width: 600px;
+        margin: 0 auto;
+        position: static;
+        max-height: none;
+        padding: 0 1rem;
+    }
+    
+    .filter-section,
+    .filter-header {
+        padding: 0;
+    }
+    
+    .search-input,
+    .sort-select,
+    .category-btn,
+    .array-btn {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .catalog-items {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .catalog-item {
+        max-width: 300px;
+    }
+    
+    .array-buttons-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: none;
+        justify-content: center;
+    }
+    
+    .array-btn {
+        flex: 0 1 calc(50% - 0.75rem);
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-title {
+        font-size: 1.5rem;
+    }
+    
+    .catalog-items {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    
+    .catalog-item {
+        max-width: 350px;
+        width: 100%;
+    }
+    
+    .array-btn {
+        flex: 0 1 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .catalog-main {
+        padding: 0 1rem;
+    }
+    
+    .catalog-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .catalog-items {
+        gap: 1rem;
+    }
+    
+    .product-image-container {
+        height: 12rem;
+    }
+    
+    .product-info {
+        padding: 1rem;
+    }
+    
+    .add-to-cart {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
