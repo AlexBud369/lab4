@@ -268,4 +268,125 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+     arrayButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.dataset.action;
+            let result = [...products];
+            let message = '';
+
+            switch (action) {
+                case 'add-product':
+                    const newProduct = {
+                        id: Math.max(...products.map(p => p.id)) + 1,
+                        name: "New Burger",
+                        description: "Freshly added burger",
+                        price: 9.99,
+                        category: "Burgers",
+                        rating: 4.0,
+                        image: "images/big_burger_img1.png",
+                        weight: "200g"
+                    };
+                    products.push(newProduct);
+                    result = products;
+                    message = `Added new product: ${newProduct.name}`;
+                    break;
+                
+                case 'remove-last':
+                    if (products.length > 0) {
+                        const removed = products.pop();
+                        result = products;
+                        message = `Removed: ${removed.name}`;
+                    } else {
+                        message = 'No products to remove';
+                    }
+                    break;
+                
+                case 'add-first':
+                    const newFirstProduct = {
+                        id: Math.max(...products.map(p => p.id)) + 1,
+                        name: "New Pizza",
+                        description: "Freshly added pizza",
+                        price: 11.99,
+                        category: "Pizza",
+                        rating: 4.2,
+                        image: "images/pizza.png",
+                        weight: "350g"
+                    };
+                    products.unshift(newFirstProduct);
+                    result = products;
+                    message = `Added new product to start: ${newFirstProduct.name}`;
+                    break;
+                
+                case 'replace-middle':
+                    if (products.length > 0) {
+                        const middleIndex = Math.floor(products.length / 2);
+                        const replaced = products[middleIndex];
+                        const newMiddleProduct = {
+                            id: Math.max(...products.map(p => p.id)) + 1,
+                            name: "Special Sandwich",
+                            description: "Unique sandwich",
+                            price: 8.99,
+                            category: "Sandwiches",
+                            rating: 4.3,
+                            image: "images/sandwich_coffe_img.png",
+                            weight: "170g"
+                        };
+                        products.splice(middleIndex, 1, newMiddleProduct);
+                        result = products;
+                        message = `Replaced: ${replaced.name} with ${newMiddleProduct.name}`;
+                    } else {
+                        message = 'No products to replace';
+                    }
+                    break;
+                
+                case 'double-price':
+                    products = products.map(p => ({ ...p, price: p.price * 2 }));
+                    result = products;
+                    message = "All prices have been doubled";
+                    break;
+                
+                case 'filter-price-above-10':
+                    result = products.filter(p => p.price > 10);
+                    message = `Found ${result.length} products with price > $10`;
+                    break;
+                
+                case 'find-high-rated':
+                    const highRated = products.find(p => p.rating > 4.5);
+                    result = highRated ? [highRated] : [];
+                    message = highRated 
+                        ? `Found high-rated product: ${highRated.name} (${highRated.rating}★)` 
+                        : "No product with rating > 4.5";
+                    break;
+                
+                case 'has-expensive':
+                    const hasExpensive = products.some(p => p.price > 12);
+                    result = hasExpensive ? products.filter(p => p.price > 12) : [];
+                    message = hasExpensive 
+                        ? `Found ${result.length} products with price > $12` 
+                        : "No products with price > $12";
+                    break;
+                
+                case 'sort-weight-desc':
+                    result = [...products].sort((a, b) => parseFloat(b.weight) - parseFloat(a.weight));
+                    message = "Products sorted by weight (descending)";
+                    break;
+                
+                case 'slice-products':
+                    result = products.slice(0, 5);
+                    message = `Showing first 5 of ${products.length} products`;
+                    break;
+                
+                default:
+                    return;
+            }
+
+            currentProducts = result;
+            renderProducts(result);
+            alert(message);
+            
+            arrayButtonsContainer.scrollTop = arrayButtonsContainer.scrollHeight;
+        });
+    });
+
+
 });
